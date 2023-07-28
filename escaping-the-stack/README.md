@@ -1,11 +1,6 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Escaping The Stack
 
-To start the slide show:
-
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
-
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev on [documentations](https://sli.dev/).
+To see if a variable escapes the stack, you can use the `-gcflags` flag with the `go build` command:
+```
+go build -gcflags '-m=3 -l' example.go
+```

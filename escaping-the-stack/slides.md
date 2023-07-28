@@ -68,7 +68,8 @@ What is a heap?
 ## How do we decide between the heap and the stack?
 
 Escape analysis!
-- An algorithm in the Golang runtime that ensures that no goroutine can access another goroutine's stack.
+- Done at compile time to inform the runtime when doing memory allocations.
+- Ensures that no goroutine can access another goroutine's stack.
 - Based on how a value is shared, not how it is declared.[^1]
 
 [^1]: <https://www.ardanlabs.com/blog/2017/05/language-mechanics-on-escape-analysis.html>
