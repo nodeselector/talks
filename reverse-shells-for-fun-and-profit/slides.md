@@ -33,7 +33,7 @@ A reverse shell is a type of shell in which the target machine communicates back
 
 ```mermaid
 graph TD
-    A[Attacker] -->|Reverse Shell| B[Target]
+    A[Target] -->|Reverse Shell| B[Attacker]
 ```
 
 For this to work, we must be able to establish a connection from the target machine to the attacker machine. But since we're talking about *egress* traffic, it's usually not blocked.
