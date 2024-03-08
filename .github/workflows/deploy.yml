@@ -26,12 +26,7 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - name: Build
-        run: |
-          cd escaping-the-stack
-          npm install
-          npm i -g @slidev/cli
-          slidev build --base talks
+      - run: ./script/build
 
       - uses: actions/configure-pages@v3
 
