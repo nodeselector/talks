@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# for each folder in the talks directory
+
+git_root=$(git rev-parse --show-toplevel)
+
+for folder in "$git_root"/talks/*; do
+  pushd "$folder" || exit
+  npm install
+  npm i -g @slidev/cli
+  slidev build --base "talks/$(basename "$folder")/dist"
+  popd || exit
+done
