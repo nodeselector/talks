@@ -8,6 +8,6 @@ for folder in "$git_root"/talks/*; do
   pushd "$folder" || exit
   npm install
   npm i -g @slidev/cli
-  slidev build --base "talks/$(basename "$folder")/dist"
+  slidev build --base "talks/talks/$(basename "$folder")/dist"
   popd || exit
 done
